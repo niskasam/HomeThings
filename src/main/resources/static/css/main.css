@@ -1,0 +1,129 @@
+html, body{
+	padding: 10;
+}
+
+h1, h2{
+	text-align: center;
+		margin-top: 1vw;
+
+}
+
+h2{
+		margin-top: 2vw;
+}
+
+.btn-success.large{
+	font-size: 3em;
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+	background-color: #EBEBEB;
+    /* Direction of the items, can be row or column */
+    flex-direction: column;
+}
+
+
+.buttons{
+	align-items:center;
+	text-align:center;
+		justify-content: center;
+			margin-top: 2vw;
+}
+
+
+form{
+	width: 60%;
+	margin-left: auto;
+	margin-right: 1vw;
+}
+
+.btn-primary{
+	width: 100%;
+}
+
+
+.sign-out{
+	width: auto;
+}
+
+i{
+	font-size: calc(20px + 1vw);
+}
+
+footer{
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	background-color: #1A1D23;
+	color: whitesmoke;
+	padding: 0.5vw;
+	font-size: larger;
+}
+
+footer-text{
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	
+}
+
+main {
+    flex: 1;
+
+}
+
+.navbar{
+	padding: 10px;
+}
+
+table{
+	width: 80%;
+	margin: auto;
+	border-collapse: collapse;
+	font-size: calc(12px + 0.5vw);
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+div .table-styles{
+	justify-content: center;
+	align-items: center;
+	margin-top: 1vw;
+}
+
+thead tr {
+	background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-size: 1.1em;
+    height: auto;
+}
+
+th, td {
+	text-align: left;
+}
+
+tbody tr {
+    border-bottom: thin solid #B8B8B8;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #F5F5F5;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 0.2vw solid #009879;
+}
+
+tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.actions{
+	width: auto;
+	height: auto;
+}

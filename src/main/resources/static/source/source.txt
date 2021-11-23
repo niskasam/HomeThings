@@ -1,0 +1,16 @@
+# YOUTUBE
+Title: Thymeleaf Setup 2021 - CSS/Bootstrap, Fragments, Page Layout, Live Reload
+Address: https://www.youtube.com/watch?v=LRZb02GCcrM
+
+# Internet links
+Title: Creating beautiful HTML tables with CSS
+Address: https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
+
+Title: Thymeleaf th:onclick event - calling confirm function
+Address: https://stackoverflow.com/questions/59992208/thymeleaf-thonclick-event-calling-confirm-function
+
+Title: Map HTML input date to LocalDate of Java Object
+Address: https://stackoverflow.com/questions/46414394/map-html-input-date-to-localdate-of-java-object
+
+
+Address: https://frontbackend.com/thymeleaf/working-with-dates-in-thymeleaf
