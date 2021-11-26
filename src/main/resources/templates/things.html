@@ -19,8 +19,10 @@
 </head>
 <body>
 
-<div layout:fragment="content">
-<h2> Your active things </h2>
+<div style="text-align:center" layout:fragment="content">
+<h1> Your active things </h1>
+
+<a href="/add" class="btn btn-success new-btn">Create a new thing <br> <i class="bi bi-plus-lg"></i></a>
 		
 		<div class="table-styles">
  		<table>
@@ -28,9 +30,10 @@
  				<tr>
  					<th> Title </th>
  					<th> Description </th>
+ 					<th> Category </th>
  					<th> Registered date </th>
  					<th> Due date </th>
- 					<th sec:authorize="hasRole('ADMIN')"> Actions </th>
+ 					<th sec:authorize="hasAuthority('ADMIN')"> Actions </th>
  				</tr>
  			</thead>
  		
@@ -38,15 +41,23 @@
 				<tr th:each = "thing : ${things}">
 					<td th:text="${thing.title}"></td>
 					<td th:text="${thing.description}"></td>
-					<td th:text="${thing.reg_date}"></td>
-					<td th:text="${thing.due_date}"></td>
-					<td sec:authorize="hasRole('ADMIN')" class="actions"><a th:href="@{/edit/{id}(id=${thing.id})}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
+					<td><div th:if="${thing.category != NULL}" 
+					th:text="${thing.category.name}"></div></td>
+					<td th:text="${#temporals.format(thing.reg_date, 'dd.MM.yyyy')}"></td>
+					<td th:text="${#temporals.format(thing.due_date, 'dd.MM.yyyy')}"></td>
+					<td sec:authorize="hasAuthority('ADMIN')" class="actions"><a th:href="@{/edit/{id}(id=${thing.id})}" class="btn btn-secondary"><i class="bi bi-pencil-square"></i></a>
 					<!-- Delete + confirmation -->
 					<a th:href="@{/delete/{id}(id=${thing.id})}" class="btn btn-danger" th:data-confirm-delete="|Are you sure you want to delete this thing?|"
   					onclick="if (!confirm(this.getAttribute('data-confirm-delete'))) return false"><i class="bi bi-trash-fill"></i></a></td>
-			</tbody>		
+			</tbody>	
+			
+				
 		</table> 
+		
+	
 		</div>
+		
+		<a href="/add" style="margin-bottom: 1vw;"class="btn btn-success new-btn">Create a new thing <br> <i class="bi bi-plus-lg"></i></a>	
 </div>
 </body>
 </html>

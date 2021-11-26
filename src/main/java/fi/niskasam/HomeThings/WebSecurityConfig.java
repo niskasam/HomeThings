@@ -1,7 +1,5 @@
 package fi.niskasam.HomeThings;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -22,13 +20,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .authorizeRequests().antMatchers("/css/**").permitAll() // Enable css when logged out
+        .authorizeRequests().antMatchers("/css/**").permitAll() // css näytetään
         .and()
         .authorizeRequests()
           .anyRequest().authenticated()
           .and()
       .formLogin()
-          .defaultSuccessUrl("/index", true)
+          .defaultSuccessUrl("/index", true) // loginin jälkeen avaa tämän sivun
           .permitAll()
           .and()
       .logout()

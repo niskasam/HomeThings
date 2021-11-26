@@ -23,8 +23,8 @@
 
 	<h1> Edit </h1>
 	
-	<div class="d-flex justify-content-center">
-		<form th:object="${thing}" th:action="@{../save}" action="#" method="post">
+	<div>
+		<form th:object="${thing}" th:action="@{../add}" action="#" method="post">
 			<input type="hidden" id="id" th:field="*{id}" />
 			
 			<label for="title">Title</label>
@@ -38,6 +38,13 @@
 			
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
+			<label for ="categoryList">Category</label>
+			<select id="categoryList" th:field="*{category}" class="form-control">
+				<option th:each="category : ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+			</select>
+			
+			<div style="clear: both; display: block; height: 1vw;"></div>
+			
 			<label for="reg_date">Registered date</label>
 			<input type="date" id="reg_date" th:field="*{reg_date}" class="form-control"/>
 			
@@ -48,7 +55,7 @@
 			
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
-			<input type="submit" class="btn btn-primary" value="Save"></input>
+			<input type="submit" class="btn btn-primary edit" value="Save"></input>
 			
 			<div style="clear: both; display: block; height: 2vw;"></div>
 			

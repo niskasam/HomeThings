@@ -17,29 +17,25 @@
 </head>
 <body>
 	<div class="wrapper">
-	<!--  Header -->
+	<!--  Yläotsikko -->
 	<header>
 		<nav class="navbar navbar-dark bg-dark">	 
 			 <a href="/index" class="text-decoration-none"><span class="navbar-brand mb-0 h1 text-center"><i class="bi bi-house-door-fill"></i> HomeThings</span></a>
 
 			 <form class="sign-out" th:action="@{/logout}" method="post">
 			 <input type="submit" value="Sign out" class="btn btn-sm btn-danger ">
-			 </form>
-
-			 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      		 	<span class="navbar-toggler-icon"></span>
-   			 </button>	 
+			 </form> 
 		</nav>
 	</header>
 
-    <!--  Main -->
+    <!--  Pääsisältö -->
     <main>
     <div layout:fragment="content">
         <p>Body contents</p>
     </div>
     </main>
     
-    <!--  Footer -->
+    <!--  Alatunniste -->
     <footer class="footer"> 
   © 2021 - Sami Niskanen - 2004369
     </footer>

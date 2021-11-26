@@ -1,12 +1,14 @@
 package fi.niskasam.HomeThings;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-class Test {
+@SpringBootTest
+class BookStoreApplicationTests {
 
-	@org.junit.jupiter.api.Test
-	void test() {
-		fail("Not yet implemented");
+	@Test
+	void contextLoads() {
 	}
 
 }
+

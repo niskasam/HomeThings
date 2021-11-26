@@ -4,52 +4,86 @@ html, body{
 
 h1, h2{
 	text-align: center;
-		margin-top: 1vw;
-
+	margin-top: 1vw;
 }
 
 h2{
-		margin-top: 2vw;
+	margin-top: 2vw;
 }
 
 .btn-success.large{
 	font-size: 3em;
+	color: white;
+	border-color: none;
+}
+
+.btn-info.large{
+	font-size: 3em;
+	color: white;
+	background-color: #52B2CF
 }
 
 .wrapper {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
 	background-color: #EBEBEB;
     /* Direction of the items, can be row or column */
     flex-direction: column;
+    justify-content: center;
 }
 
 
 .buttons{
 	align-items:center;
 	text-align:center;
-		justify-content: center;
-			margin-top: 2vw;
+	justify-content: center;
+	margin-top: 2vw;
 }
 
+#show{
+	background-color: #558EB4;
+	border-color: #558EB4;
+}
 
 form{
-	width: 60%;
-	margin-left: auto;
-	margin-right: 1vw;
+	margin-left: 35%;
+}
+
+input#title, #description{
+	width: 50%;
+}
+
+input#reg_date, #due_date, #categoryList{
+	width: 30%;
 }
 
 .btn-primary{
-	width: 100%;
+	width: 25%;
 }
 
+.btn-primary.edit{
+	width: 50%;
+}
 
-.sign-out{
-	width: auto;
+.btn-secondary{
+	width: 50%;
+}
+.btn-warning{
+	width: 25%;
+}
+
+input.sign-out{
+	float: right;
+}
+
+.error-msg{
+	color: red;
+	padding: 0;
+	margin: 0;
 }
 
 i{
-	font-size: calc(20px + 1vw);
+	font-size: calc(18px + 1vw);
 }
 
 footer{
@@ -66,7 +100,6 @@ footer-text{
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	
 }
 
 main {
@@ -77,6 +110,9 @@ main {
 .navbar{
 	padding: 10px;
 }
+
+
+/* Things listauksen tyylejä */
 
 table{
 	width: 80%;
@@ -92,6 +128,7 @@ div .table-styles{
 	justify-content: center;
 	align-items: center;
 	margin-top: 1vw;
+	margin-bottom: 1vw;
 }
 
 thead tr {
@@ -124,6 +161,6 @@ tbody tr.active-row {
 }
 
 .actions{
-	width: auto;
+	min-width: auto;
 	height: auto;
 }

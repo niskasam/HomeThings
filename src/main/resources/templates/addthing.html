@@ -23,17 +23,26 @@
 
 	<h1> Create new </h1>
 	
-	<div class="d-flex justify-content-center">
-		<form th:object="${thing}" th:action="@{save}" action="#" method="post">
+	<div>
+		<form class="new" th:object="${thing}" th:action="@{add}" action="#" method="post">
 			
 			<label for="title">Title</label>
-			<input type="text" id="title" th:field="*{title}" class="form-control"/>
+			<input type="text" id="title" placeholder="Type descriptive title" th:field="*{title}" class="form-control"/>
+			<p class="error-msg" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
 			
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
 			<label for="description">Description</label>
-			<input type="text" id="description" th:field="*{description}" class="form-control"/>
+			<input type="text" id="description" placeholder="Type description that tells why this thing is stored" th:field="*{description}" class="form-control"/>
+			<p class="error-msg" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
 			
+			
+			<div style="clear: both; display: block; height: 1vw;"></div>
+			
+			<label for ="categoryList">Category</label>
+			<select id="categoryList" th:field="*{category}" class="form-control">
+				<option th:each="category : ${categories}" th:value="${category.categoryid}" th:text="${category.name}"></option>
+			</select>
 			
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
@@ -43,11 +52,13 @@
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
 			<label for="due_date">Due date</label>
-			<input type="date" id="due_date" th:field="*{due_date}" class="form-control"></input>
+			<input type="date" id="due_date"  th:field="*{due_date}" class="form-control"></input>
+			<p class="error-msg" th:if="${#fields.hasErrors('due_date')}" th:errors="*{due_date}"></p>
 			
 			<div style="clear: both; display: block; height: 1vw;"></div>
 			
 			<input type="submit" class="btn btn-primary" value="Save"></input>
+			<input type="reset" class="btn btn-warning" value="Reset form"></input>
 			
 			<div style="clear: both; display: block; height: 2vw;"></div>
 			
