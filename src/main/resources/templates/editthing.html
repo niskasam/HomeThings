@@ -24,7 +24,7 @@
 	<h1> Edit </h1>
 	
 	<div>
-		<form th:object="${thing}" th:action="@{../add}" action="#" method="post">
+		<form class="margin" th:object="${thing}" th:action="@{../add}" action="#" method="post">
 			<input type="hidden" id="id" th:field="*{id}" />
 			
 			<label for="title">Title</label>

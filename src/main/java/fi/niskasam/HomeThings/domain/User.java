@@ -8,27 +8,25 @@ import javax.persistence.Id;
 
 @Entity
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false, updatable = false)
 	private Long id;
-	
+
 	@Column(name = "username", nullable = false, unique = true)
 	private String username;
-	
+
 	@Column(name = "password", nullable = false)
 	private String passwordHash;
-	
+
 	@Column(name = "role", nullable = false)
 	private String role;
-	
-	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public User(Long id, String username, String passwordHash, String role) {
 		super();
@@ -38,7 +36,6 @@ public class User {
 		this.role = role;
 	}
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -70,9 +67,5 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	
-	
-	
-	
 
 }

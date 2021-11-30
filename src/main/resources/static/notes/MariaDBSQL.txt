@@ -1,3 +1,53 @@
+28.11.2021
+
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS thing; 
+DROP TABLE IF EXISTS user;
+SET FOREIGN_KEY_CHECKS=1;
+
+CREATE TABLE category(
+  categoryid BIGINT NOT NULL AUTO_INCREMENT 
+, name VARCHAR(50) NOT NULL
+, PRIMARY KEY (categoryid)
+);
+
+CREATE TABLE thing (
+id BIGINT NOT NULL AUTO_INCREMENT
+, title VARCHAR(50) NOT NULL
+, description VARCHAR(50) NOT NULL
+, reg_date DATE NOT NULL
+, due_date DATE NOT NULL
+, categoryid BIGINT
+, owner VARCHAR(50) NOT NULL
+, PRIMARY KEY (id)
+, FOREIGN KEY (categoryid) REFERENCES category(categoryid)
+);
+
+CREATE TABLE user
+(id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY
+,username VARCHAR(250) NOT NULL
+,password VARCHAR(250) NOT NULL
+,role VARCHAR(20) NOT NULL
+);
+
+INSERT INTO category (name) VALUES ('Traffic'), ('Vaccine'), ('Meetings'), ('Insurances'), ('Other');
+
+INSERT INTO thing (title, description, categoryid, reg_date, due_date, owner)
+VALUES ("Test 1", "This is a test data 1", 1, CURRENT_DATE(), '2021-11-30', "user"),
+("Test 2", "This is a test data 2", 2, CURRENT_DATE(), '2021-11-30', "user"),
+("Test 3", "This is a test data 3", 3, CURRENT_DATE(), '2021-11-30', "admin");
+
+INSERT INTO user (username, password, role) 
+VALUES ("user", "$2a$10$1DTvwpXVBArGFixHBuzVJObjTuXhIOkx5pse6KsYs8/C2ckxnGEou", "USER"), 
+("admin", "$2a$10$cDZgyF4xaPMmmoRW3OVcmuf.8o2YSx8.M7CeRKqi.1PVw.t3E8uEC", "ADMIN");
+
+
+
+****************************************************************************************************
+
+
+
 25.11.2021
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -41,7 +91,12 @@ INSERT INTO user (username, password, role)
 VALUES ("user", "$2a$10$1DTvwpXVBArGFixHBuzVJObjTuXhIOkx5pse6KsYs8/C2ckxnGEou", "USER"), 
 ("admin", "$2a$10$cDZgyF4xaPMmmoRW3OVcmuf.8o2YSx8.M7CeRKqi.1PVw.t3E8uEC", "ADMIN");
 
-********************
+
+
+****************************************************************************************************
+
+
+
 
 SET FOREIGN_KEY_CHECKS=0;
 DROP TABLE IF EXISTS thing; 

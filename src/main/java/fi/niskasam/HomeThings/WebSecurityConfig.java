@@ -22,10 +22,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
         .authorizeRequests().antMatchers("/css/**").permitAll() // css näytetään
         .and()
+        .authorizeRequests().antMatchers("/register", "/saveuser").permitAll()
+        .and()
         .authorizeRequests()
           .anyRequest().authenticated()
           .and()
       .formLogin()
+      	  .loginPage("/login")
           .defaultSuccessUrl("/index", true) // loginin jälkeen avaa tämän sivun
           .permitAll()
           .and()

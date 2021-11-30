@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" 
+	xmlns:th="http://www.thymeleaf.org" 
+  	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+	
+	
+	
+<head>
+    <title>Login screen</title>
+  <script type="text/javascript" th:src="@{/js/login.js}"></script>
+</head>
+
+<body>
+	<div class="login-container" layout:fragment="content">
+	
+		
+	
+		<div id="card-login" class="card" th:if="${param.logout}">
+			<div class="card-body"> 
+				You have been logged out!
+			</div>
+		</div>
+		
+		<form id="login" th:action="@{/login}" method="post">
+			<div class="form-group">	
+				<br>			
+				<h3> Sign in </h3>
+				<br>
+				
+				<div class="error-msg" th:if="${param.error}">
+				Invalid username and/or password!
+				</div>
+				
+				<br>
+				<i class="bi bi-person-fill"></i>
+				<input placeholder="Username" class="form-control bi bi-person-fill" type="text" name="username" id="username">
+				
+				<i class="bi bi-key-fill"></i>
+				<input placeholder="Password" class="form-control" type="password" name="password" id="password">
+				<br><br>
+				<input class="btn btn-sm btn-primary" type="submit" value="Login">
+				<a href="/register" class="btn btn-sm btn-success">Register</a>
+				<br><br><br>
+			</div>
+		</form>
+
+	</div>	
+
+</body>
+</html>
